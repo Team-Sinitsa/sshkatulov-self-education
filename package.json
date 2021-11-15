@@ -6,7 +6,10 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "prepare": "husky install",
+    "lint": "node ./node_modules/eslint/bin/eslint . --ext .tsx,.ts",
+    "lint:fix": "node ./node_modules/eslint/bin/eslint . --ext .tsx,.ts --fix"
   },
   "dependencies": {
     "@testing-library/jest-dom": "5.14.1",
@@ -31,6 +34,7 @@
     "eslint-plugin-jsx-a11y": "6.4.1",
     "eslint-plugin-react": "7.26.1",
     "eslint-plugin-react-hooks": "4.2.0",
+    "husky": "^7.0.0",
     "typescript": "4.4.4"
   },
   "eslintConfig": {
