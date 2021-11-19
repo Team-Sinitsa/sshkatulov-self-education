@@ -5,10 +5,16 @@
 }
 
 .top-bar {
-  text-align: end;
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-end;
 }
 
-.theme-switcher {
+button {
+  margin-right: 4px;
+}
+
+.control-switcher {
   text-transform: uppercase;
   font-size: unset !important;
 }
