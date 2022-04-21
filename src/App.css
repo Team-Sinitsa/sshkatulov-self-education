@@ -1,5 +1,16 @@
 .App {
   text-align: center;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.top-bar {
+  text-align: end;
+}
+
+.theme-switcher {
+  text-transform: uppercase;
+  font-size: unset !important;
 }
 
 .App-logo {
@@ -14,14 +25,13 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: inherit;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: inherit;
 }
 
 .App-link {
