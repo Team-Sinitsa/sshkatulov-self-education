@@ -112,3 +112,4 @@ dist
 .tern-port
 
 src/config.ts
+.vscode
