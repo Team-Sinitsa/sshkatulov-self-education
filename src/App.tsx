@@ -13,13 +13,9 @@ import { UsersControl } from './components/UsersControl';
 import { ThemeSwitch } from './components/ThemeSwitch';
 import { AppStyles as styles } from './styles/AppStyles';
 import { AuthControl } from './components/AuthControl';
+import { lngs } from './constants';
 
 const ColorModeContext = React.createContext({ toggleColorMode: () => {} });
-
-const lngs: any = {
-  en: { nativeName: 'English' },
-  po: { nativeName: 'Polish' }
-};
 
 function App() {
   const colorMode = React.useContext(ColorModeContext);

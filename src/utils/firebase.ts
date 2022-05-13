@@ -4,7 +4,7 @@ import {
 } from 'firebase/firestore/lite';
 import * as uuid from 'uuid';
 import { firebaseConfig } from '../config';
-import { User } from '../types/User';
+import { User } from '../types';
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);

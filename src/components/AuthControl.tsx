@@ -8,9 +8,9 @@ import { useTranslation } from 'react-i18next';
 import { useFirebase } from 'react-redux-firebase';
 import { useAppSelector } from '../app/hooks';
 import { RootState } from '../app/store';
-import { AuthMode } from '../const/AuthMode';
+import { AuthMode } from '../constants';
 import { AuthStyles as styles } from '../styles/AuthStyles';
-import { FirebaseState } from '../types/FirebaseState';
+import { FirebaseApiError, FirebaseState } from '../types';
 
 const AnonymousForm = (props: {
   setMode: (mode: AuthMode) => void
@@ -38,7 +38,7 @@ const AnonymousForm = (props: {
 };
 
 const LoggedForm = (props: {
-  onSubmit: (...args: any) => void,
+  onSubmit: (...args: string[]) => void,
   email: string
 }) => {
   const { t } = useTranslation();
@@ -63,7 +63,7 @@ const LoggedForm = (props: {
 };
 
 const LoginSignupForm = (props: {
-  onSubmit: (...args: any) => void,
+  onSubmit: (...args: string[]) => void,
   onBack: () => void,
   isSignup?: boolean
 }) => {
@@ -134,12 +134,12 @@ export const AuthControl = () => {
     setError(errorFromResonse ?? 'Unknown error');
   };
 
-  const processAuth = async (action: (...args: any) => any) => {
+  const processAuth = async <T extends unknown>(action: (...args: string[]) => Promise<T>) => {
     setIsLoading(true);
     try {
       await action();
-    } catch (e: any) {
-      handleFirebaseAuthError(e.code);
+    } catch (e) {
+      handleFirebaseAuthError((e as FirebaseApiError).code);
     }
     setIsLoading(false);
   };

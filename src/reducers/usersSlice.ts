@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { RootState } from '../app/store';
-import { User } from '../types/User';
+import { User } from '../types';
 import { addNewUser, fetchUsers } from '../utils/firebase';
 
 export interface UsersState {
