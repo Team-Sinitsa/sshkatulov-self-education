@@ -9,7 +9,8 @@ export const AppStyles = {
     display: 'flex',
     alignItems: 'baseline',
     justifyContent: 'flex-end',
-    padding: '8px'
+    padding: '8px',
+    boxShadow: 3
   },
   body: {
     display: 'grid',

@@ -1,9 +1,7 @@
-/* eslint-disable no-param-reassign */
-
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { RootState } from '../../app/store';
-import { User } from '../../types/User';
-import { addNewUser, fetchUsers } from './firebase';
+import { RootState } from '../app/store';
+import { User } from '../types/User';
+import { addNewUser, fetchUsers } from '../utils/firebase';
 
 export interface UsersState {
   users: User[];
@@ -19,7 +17,6 @@ export const showhUsers = createAsyncThunk(
   'users/showUsers',
   async () => {
     const response = await fetchUsers();
-    console.log(JSON.stringify(response)); // remove
     return response;
   }
 );

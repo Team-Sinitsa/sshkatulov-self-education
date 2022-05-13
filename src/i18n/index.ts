@@ -28,6 +28,15 @@ i18n
               fetchUsers: 'Fetch Users',
               addUser: 'Add User'
             }
+          },
+          auth: {
+            email: 'Email',
+            password: 'Password',
+            logIn: 'Log In',
+            signUp: 'Sign Up',
+            logOut: 'Log Out',
+            back: 'Back',
+            loggedInAs: 'Logged in as'
           }
         }
       },
@@ -47,6 +56,15 @@ i18n
               fetchUsers: 'Pobierz użytkowników',
               addUser: 'Dodaj użytkownika'
             }
+          },
+          auth: {
+            email: 'Email',
+            password: 'Hasło',
+            logIn: 'Zaloguj się',
+            signUp: 'Zarejestruj się',
+            logOut: 'Wyloguj się',
+            back: 'Nazad',
+            loggedInAs: 'Zalogowany jako'
           }
         }
       }

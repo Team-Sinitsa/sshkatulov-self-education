@@ -4,9 +4,9 @@ import {
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { useAppSelector, useAppDispatch } from '../../app/hooks';
-import { addUser, showhUsers, usersList } from './usersSlice';
-import { UsersStyles as styles } from '../../styles/UsersStyles';
+import { useAppSelector, useAppDispatch } from '../app/hooks';
+import { addUser, showhUsers, usersList } from '../reducers/usersSlice';
+import { UsersStyles as styles } from '../styles/UsersStyles';
 
 export function UsersControl() {
   const { t } = useTranslation();

@@ -3,14 +3,16 @@ import Box from '@mui/material/Box';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { useTranslation, Trans } from 'react-i18next';
 import {
+  Divider,
   FormControl, InputLabel, Link, MenuItem, Select
 } from '@mui/material';
 
 import logo from './logo.svg';
 import './App.css';
-import { UsersControl } from './features/users/UsersControl';
+import { UsersControl } from './components/UsersControl';
 import { ThemeSwitch } from './components/ThemeSwitch';
 import { AppStyles as styles } from './styles/AppStyles';
+import { AuthControl } from './components/AuthControl';
 
 const ColorModeContext = React.createContext({ toggleColorMode: () => {} });
 
@@ -25,6 +27,13 @@ function App() {
   return (
     <Box sx={styles.main}>
       <Box sx={styles.header}>
+        <AuthControl />
+        <Divider
+          sx={styles.marginAround}
+          orientation="vertical"
+          variant="middle"
+          flexItem
+        />
         <FormControl>
           <InputLabel id="lng-select-label">{t('header.lng')}</InputLabel>
           <Select

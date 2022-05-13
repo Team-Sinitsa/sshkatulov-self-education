@@ -1,11 +1,16 @@
 import { Action, configureStore, ThunkAction } from '@reduxjs/toolkit';
+import { firebaseReducer } from 'react-redux-firebase';
 
-import usersReducer from '../features/users/usersSlice';
+import usersReducer from '../reducers/usersSlice';
 
 export const store = configureStore({
   reducer: {
-    users: usersReducer
-  }
+    users: usersReducer,
+    firebase: firebaseReducer
+  },
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware({
+    serializableCheck: false
+  })
 });
 
 export type AppDispatch = typeof store.dispatch;

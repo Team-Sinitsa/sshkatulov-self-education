@@ -3,8 +3,8 @@ import {
   getFirestore, collection, getDocs, setDoc, doc
 } from 'firebase/firestore/lite';
 import * as uuid from 'uuid';
-import { firebaseConfig } from '../../config';
-import { User } from '../../types/User';
+import { firebaseConfig } from '../config';
+import { User } from '../types/User';
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
