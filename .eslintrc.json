@@ -54,9 +54,36 @@
         "comma-dangle": ["error", "never"],
         "import/prefer-default-export": "off",
         "indent": ["error", 2],
-        "no-param-reassign": ["error", { "props": false }],
-        "react/jsx-props-no-spreading": ["error", {
-            "exceptions": ["ReactReduxFirebaseProvider"]
-        }]
+        "no-param-reassign": [
+            "error",
+            {
+                "props": false
+            }
+        ],
+        "react/jsx-props-no-spreading": [
+            "warn",
+            {
+                "exceptions": [
+                    "ReactReduxFirebaseProvider",
+                    "TextField"
+                ]
+            }
+        ],
+        "import/no-extraneous-dependencies": [
+            "error",
+            {
+                "devDependencies": true
+            }
+        ],
+        "react/require-default-props": "off",
+        "object-curly-newline": [
+            "error",
+            {
+              "ObjectExpression": "always",
+              "ObjectPattern": { "multiline": true },
+              "ImportDeclaration": { "multiline": true, "minProperties": 4 },
+              "ExportDeclaration": "never"
+            }
+        ]
     }
 }

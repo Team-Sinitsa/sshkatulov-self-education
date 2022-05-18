@@ -1,8 +1,7 @@
 import { initializeApp } from 'firebase/app';
 import {
-  getFirestore, collection, getDocs, setDoc, doc
+  getFirestore, collection, getDocs, addDoc
 } from 'firebase/firestore/lite';
-import * as uuid from 'uuid';
 import { firebaseConfig } from '../config';
 import { User } from '../types';
 
@@ -16,5 +15,5 @@ export const fetchUsers = async () => {
 };
 
 export const addNewUser = async (user: User) => {
-  await setDoc(doc(db, 'users', uuid.v4()), user);
+  await addDoc(collection(db, 'users'), user);
 };

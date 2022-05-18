@@ -9,7 +9,9 @@ export const store = configureStore({
     firebase: firebaseReducer
   },
   middleware: (getDefaultMiddleware) => getDefaultMiddleware({
-    serializableCheck: false
+    serializableCheck: {
+      ignoredActions: ['@@reactReduxFirebase/LOGIN']
+    }
   })
 });
 

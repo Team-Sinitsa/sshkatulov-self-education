@@ -15,7 +15,9 @@ import { AppStyles as styles } from './styles/AppStyles';
 import { AuthControl } from './components/AuthControl';
 import { lngs } from './constants';
 
-const ColorModeContext = React.createContext({ toggleColorMode: () => {} });
+const ColorModeContext = React.createContext({
+  toggleColorMode: () => {}
+});
 
 function App() {
   const colorMode = React.useContext(ColorModeContext);
