@@ -1,12 +1,15 @@
 import { Action, configureStore, ThunkAction } from '@reduxjs/toolkit';
-import { firebaseReducer } from 'react-redux-firebase';
+import { FirebaseReducer, firebaseReducer as firebase } from 'react-redux-firebase';
 
-import usersReducer from '../reducers/usersSlice';
+import logger, { LoggerState } from '../reducers/loggerSlice';
+import users, { UsersState } from '../reducers/usersSlice';
+import { FirebaseProfile } from '../types';
 
 export const store = configureStore({
   reducer: {
-    users: usersReducer,
-    firebase: firebaseReducer
+    users,
+    firebase,
+    logger
   },
   middleware: (getDefaultMiddleware) => getDefaultMiddleware({
     serializableCheck: {
@@ -15,8 +18,13 @@ export const store = configureStore({
   })
 });
 
+export interface RootState {
+  users: UsersState
+  firebase: FirebaseReducer.Reducer<FirebaseProfile>
+  logger: LoggerState
+}
+
 export type AppDispatch = typeof store.dispatch;
-export type RootState = ReturnType<typeof store.getState>;
 export type AppThunk<ReturnType = void> = ThunkAction<
   ReturnType,
   RootState,

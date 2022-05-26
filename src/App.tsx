@@ -9,6 +9,7 @@ import {
 
 import logo from './logo.svg';
 import './App.css';
+import { Notification } from './components/Notification';
 import { UsersControl } from './components/UsersControl';
 import { ThemeSwitch } from './components/ThemeSwitch';
 import { AppStyles as styles } from './styles/AppStyles';
@@ -24,6 +25,7 @@ function App() {
   const { t, i18n } = useTranslation();
   return (
     <Box sx={styles.main}>
+      <Notification />
       <Box sx={styles.header}>
         <AuthControl />
         <Divider

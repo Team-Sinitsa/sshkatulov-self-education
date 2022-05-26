@@ -8,7 +8,7 @@ import { SubmitHandler, useForm } from 'react-hook-form';
 import { useAppSelector, useAppDispatch } from '../app/hooks';
 import { addUser, showhUsers, usersList } from '../reducers/usersSlice';
 import { UsersStyles as styles } from '../styles/UsersStyles';
-import { User } from '../types/User';
+import { User } from '../types';
 
 export function UsersControl() {
   const { t } = useTranslation();
@@ -60,8 +60,8 @@ export function UsersControl() {
         </Button>
       </Box>
       <List>
-        {list.map((u) => (
-          <ListItem key={`${u.lastName}, ${u.firstName}`}>
+        {list.map((u, index) => (
+          <ListItem key={u.lastName + index}>
             <ListItemText primary={`${u.lastName}, ${u.firstName}`} />
           </ListItem>
         ))}

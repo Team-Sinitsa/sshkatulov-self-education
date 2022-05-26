@@ -7,13 +7,13 @@ import { User } from '../types';
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
+const usersCollection = () => collection(db, 'users');
 
 export const fetchUsers = async () => {
-  const usersCol = collection(db, 'users');
-  const usersSnapshot = await getDocs(usersCol);
+  const usersSnapshot = await getDocs(usersCollection());
   return usersSnapshot.docs.map((document) => document.data());
 };
 
 export const addNewUser = async (user: User) => {
-  await addDoc(collection(db, 'users'), user);
+  await addDoc(usersCollection(), user);
 };

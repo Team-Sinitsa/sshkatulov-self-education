@@ -1,7 +1,7 @@
-export type FirebaseState = {
+export type FirebaseProfile = {
   auth: {
     isLoaded: boolean,
     isEmpty: boolean,
-    email?: string
+    email: string | null
   }
 }

@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 
 export const LoggedForm = (props: {
   onSubmit: () => void,
-  email: string | undefined
+  email: string | null
 }) => {
   const { t } = useTranslation();
   const { onSubmit, email } = props;
