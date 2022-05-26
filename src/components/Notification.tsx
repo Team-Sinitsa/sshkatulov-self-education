@@ -9,11 +9,13 @@ export const Notification = () => {
   const loggerSelector = getLoggerSelector();
   const dispatch = useAppDispatch();
 
+  const resetError = () => dispatch(setError(null));
+
   return (
     <Popover
       id="general-notification"
       open={!!loggerSelector.error}
-      onClose={() => dispatch(setError(null))}
+      onClose={resetError}
       sx={styles}
     >
       <Typography>

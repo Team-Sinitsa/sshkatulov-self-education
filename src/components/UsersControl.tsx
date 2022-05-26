@@ -21,6 +21,8 @@ export function UsersControl() {
     reset();
   };
 
+  const getUsers = () => dispatch(showhUsers());
+
   return (
     <Box>
       <Box
@@ -54,7 +56,7 @@ export function UsersControl() {
         </Button>
         <Button
           variant="outlined"
-          onClick={() => dispatch(showhUsers())}
+          onClick={getUsers}
         >
           {t('users.controls.fetchUsers')}
         </Button>
